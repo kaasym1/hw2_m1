@@ -1,17 +1,35 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println(permission(generateRandomAge(), generateRandomTemperature()));
+        System.out.println(permission(generateRandomAge(), generateRandomTemperature()));
+        System.out.println(permission(generateRandomAge(), generateRandomTemperature()));
+        System.out.println(permission(generateRandomAge(), generateRandomTemperature()));
+        System.out.println(permission(generateRandomAge(), generateRandomTemperature()));
+    }
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+    public static String permission(int age, int temperature) {
+        if (age >= 20 && age >= 45 && temperature >= -20 && temperature >= 30) {
+            return "Можно идти гулять";
+        } else if (age <= 20 && temperature <= 0 && temperature <= 28) {
+            return "Можно идти гулять";
+        } else if (age >= 45 && temperature >= -10 && temperature >= 20) {
+            return "Можно идти гулять";
+        } else {
+            return "Отавайтесь дома";
         }
+    }
+
+    public static int generateRandomAge() {
+        Random random = new Random();
+        int age = random.nextInt(101);
+        return age;
+    }
+
+    public static int generateRandomTemperature(){
+        Random random = new Random();
+        int temperature = random.nextInt(45);
+        return temperature;
     }
 }
